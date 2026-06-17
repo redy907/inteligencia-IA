@@ -1,1 +1,157 @@
+/* Estilos para a Abertura Impactante */
+.abertura-digital {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #050b14; /* Azul escuro quase preto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 20px;
+}
 
+/* Fundo com efeito de grade cibernética (Matrix/Tech style) */
+.fundo-cyber {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(11, 19, 43, 0.4) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(11, 19, 43, 0.4) 2px, transparent 2px);
+    background-size: 40px 40px;
+    background-position: center;
+    mask-image: radial-gradient(circle, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 80%);
+    z-index: 1;
+}
+
+.conteudo-abertura {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.tag-alerta {
+    display: inline-block;
+    background: rgba(72, 202, 228, 0.1);
+    border: 1px solid #48cae4;
+    color: #48cae4;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.conteudo-abertura h1 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+#texto-efeito {
+    color: #00b4d8;
+    text-shadow: 0 0 15px rgba(0, 180, 216, 0.5);
+}
+
+/* Cursor piscando para simular digitação */
+.cursor {
+    color: #00b4d8;
+    animation: piscar 0.7s infinite;
+}
+
+.conteudo-abertura p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+}
+
+/* Botões */
+.botoes-grupo {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-principal, .btn-secundario {
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-principal {
+    background-color: #00b4d8;
+    color: #050b14;
+    box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+}
+
+.btn-principal:hover {
+    background-color: #48cae4;
+    transform: translateY(-2px);
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secundario:hover {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Indicador de Scroll */
+.scroll-indica {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.mouse {
+    width: 26px;
+    height: 42px;
+    border: 2px solid #94a3b8;
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #00b4d8;
+    position: absolute;
+    top: 8px; left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: scroll-anim 1.5s infinite;
+}
+
+/* Animações Keyframes */
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes scroll-anim {
+    0% { opacity: 1; top: 8px; }
+    100% { opacity: 0; top: 24px; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .conteudo-abertura h1 { font-size: 2.3rem; }
+    .botoes-grupo { flex-direction: column; gap: 10px; }
+}
