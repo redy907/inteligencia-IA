@@ -1,8 +1,3 @@
-// =========================================================================
-// 1. SIMULADOR EDUCATIVO: "DETECTOR DE DEEPFAKES"
-// =========================================================================
-// Cria uma interface interativa para o usuário testar se sabe identificar pistas
-
 const pistasDeepfake = [
     "Piscar de olhos inconsistente ou ausente.",
     "Bordas borradas ao redor do rosto e cabelo.",
