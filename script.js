@@ -32,12 +32,6 @@ function inicializarSimulador() {
         });
     }
 }
-
-// =========================================================================
-// 2. FILTRO DINÂMICO DE CONTEÚDO (Categorias)
-// =========================================================================
-// Permite ao usuário filtrar os cards de impacto por categoria de interesse
-
 function configurarFiltros() {
     const sectionImpacto = document.querySelector('#impacto .container');
     if (!sectionImpacto) return;
@@ -94,12 +88,6 @@ function configurarFiltros() {
         });
     }
 }
-
-// =========================================================================
-// 3. INDICADOR DE TEMPO DE LEITURA ESTIMADO
-// =========================================================================
-// Calcula o tempo que o usuário levará para ler a página e exibe no topo
-
 function calcularTempoLeitura() {
     const textoPagina = document.body.innerText;
     const contagemPalavras = textoPagina.split(/\s+/).length;
@@ -122,10 +110,6 @@ function calcularTempoLeitura() {
 
     document.body.appendChild(bannerTempo);
 }
-
-// =========================================================================
-// INICIALIZAÇÃO DE TODOS OS SCRIPTS EXTRA
-// =========================================================================
 document.addEventListener('DOMContentLoaded', () => {
     inicializarSimulador();
     configurarFiltros();
