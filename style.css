@@ -217,3 +217,12 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+.reveal-init {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.faded-in {
+    opacity: 1;
+    transform: translateY(0);
+}
