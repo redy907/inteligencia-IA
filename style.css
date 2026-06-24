@@ -106,3 +106,20 @@ p {
 strong {
     color: #ff3333;
 }
+/* Estilos adicionais para os novos textos */
+.subsecao {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed #333;
+}
+
+.subsecao h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.subsecao p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
