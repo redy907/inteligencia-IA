@@ -1,157 +1,110 @@
-/* Estilos para a Abertura Impactante */
-.abertura-digital {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background-color: #050b14; /* Azul escuro quase preto */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212; /* Preto de fundo */
+    color: #ffffff; /* Texto branco */
+    line-height: 1.6;
+}
+
+/* Abertura / Header */
+.header {
+    background: linear-gradient(180deg, #ff0000 0%, #121212 100%); /* Degradê Vermelho para Preto */
     text-align: center;
-    overflow: hidden;
-    padding: 0 20px;
+    padding: 60px 20px;
 }
 
-/* Fundo com efeito de grade cibernética (Matrix/Tech style) */
-.fundo-cyber {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: 
-        linear-gradient(rgba(11, 19, 43, 0.4) 2px, transparent 2px),
-        linear-gradient(90deg, rgba(11, 19, 43, 0.4) 2px, transparent 2px);
-    background-size: 40px 40px;
-    background-position: center;
-    mask-image: radial-gradient(circle, black 40%, transparent 80%);
-    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 80%);
-    z-index: 1;
-}
-
-.conteudo-abertura {
-    position: relative;
-    z-index: 2;
-    max-width: 850px;
-}
-
-.tag-alerta {
-    display: inline-block;
-    background: rgba(72, 202, 228, 0.1);
-    border: 1px solid #48cae4;
-    color: #48cae4;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
-}
-
-.conteudo-abertura h1 {
-    font-size: 3.5rem;
+.logo {
+    font-size: 3rem;
+    font-weight: 900;
     color: #ffffff;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-#texto-efeito {
-    color: #00b4d8;
-    text-shadow: 0 0 15px rgba(0, 180, 216, 0.5);
-}
-
-/* Cursor piscando para simular digitação */
-.cursor {
-    color: #00b4d8;
-    animation: piscar 0.7s infinite;
-}
-
-.conteudo-abertura p {
+.subtitle {
     font-size: 1.2rem;
-    color: #94a3b8;
-    max-width: 650px;
-    margin: 0 auto 40px auto;
+    color: #e0e0e0;
+    margin-top: 10px;
 }
 
-/* Botões */
-.botoes-grupo {
+/* Menu de Abas */
+.nav-tabs {
     display: flex;
-    gap: 20px;
     justify-content: center;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #ff0000; /* Linha vermelha divisória */
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.btn-principal, .btn-secundario {
-    padding: 14px 32px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 6px;
+.tab-link {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #b3b3b3;
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.btn-principal {
-    background-color: #00b4d8;
-    color: #050b14;
-    box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+.tab-link:hover {
+    color: #ff0000;
+    background-color: #262626;
 }
 
-.btn-principal:hover {
-    background-color: #48cae4;
-    transform: translateY(-2px);
-}
-
-.btn-secundario {
-    background-color: transparent;
+.tab-link.active {
     color: #ffffff;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: #ff0000; /* Aba ativa fica vermelha */
 }
 
-.btn-secundario:hover {
-    border-color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.05);
+/* Área de Conteúdo */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* Indicador de Scroll */
-.scroll-indica {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
+.tab-content {
+    display: none; /* Esconde as abas por padrão */
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #ff0000; /* Detalhe em vermelho na lateral */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.mouse {
-    width: 26px;
-    height: 42px;
-    border: 2px solid #94a3b8;
-    border-radius: 20px;
-    position: relative;
+/* Mostra a aba que tiver a classe .active */
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
 }
 
-.mouse::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background-color: #00b4d8;
-    position: absolute;
-    top: 8px; left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    animation: scroll-anim 1.5s infinite;
+/* Animação suave para troca de abas */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animações Keyframes */
-@keyframes piscar {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+h2 {
+    color: #ff0000;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
 }
 
-@keyframes scroll-anim {
-    0% { opacity: 1; top: 8px; }
-    100% { opacity: 0; top: 24px; }
+p {
+    color: #dcdcdc;
+    font-size: 1.1rem;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .conteudo-abertura h1 { font-size: 2.3rem; }
-    .botoes-grupo { flex-direction: column; gap: 10px; }
+strong {
+    color: #ff3333;
 }
