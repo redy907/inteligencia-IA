@@ -67,3 +67,100 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDDS - Cidadania Digital e IA</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">IDDS</div>
+        <p class="subtitle">Instituto de Cidadania Digital e Segurança</p>
+    </header>
+
+    <nav class="nav-tabs">
+        <button class="tab-link active" onclick="openTab(event, 'inicio')">Início</button>
+        <button class="tab-link" onclick="openTab(event, 'deepfakes')">Deepfakes</button>
+        <button class="tab-link" onclick="openTab(event, 'desinformacao')">Desinformação</button>
+        <button class="tab-link" onclick="openTab(event, 'combate')">Como Combater</button>
+        <button class="tab-link" onclick="openTab(event, 'noticias')">Notícias</button>
+    </nav>
+
+    <main class="container">
+        
+        <section id="inicio" class="tab-content active">
+            <h2>Cidadania Digital e Inteligência Artificial</h2>
+            <p>Seja bem-vindo ao IDDS. Navegue pelas abas para entender como o avanço da Inteligência Artificial, o surgimento das <strong>deepfakes</strong> e a disseminação de <strong>desinformação</strong> estão impactando a nossa sociedade e moldando o futuro da cidadania digital.</p>
+        </section>
+
+        <section id="deepfakes" class="tab-content">
+            <h2>O Impacto das Deepfakes</h2>
+            <p>Deepfakes são vídeos, áudios ou imagens gerados por IA que imitam de forma ultra-realista o rosto e a voz de pessoas reais. Embora a tecnologia seja fascinante, ela traz grandes riscos quando usada para criar conteúdos falsos sem consentimento.</p>
+            
+            <div class="subsecao">
+                <h3>Riscos Sociais e Crimes contra a Honra</h3>
+                <p><strong>Fabricação da Realidade:</strong> Com a popularização dos geradores de mídia, a desinformação deixou de ser apenas a distorção de fatos e passou a ser a criação sintética de acontecimentos falsos.</p>
+                <p><strong>Crimes contra a Honra:</strong> Cerca de 98% dos conteúdos do tipo deepfake encontrados na internet têm natureza prejudicial, afetando de forma desproporcional mulheres e adolescentes.</p>
+            </div>
+        </section>
+
+        <section id="desinformacao" class="tab-content">
+            <h2>A Epidemia da Desinformação</h2>
+            <p>A desinformação em massa, impulsionada por algoritmos de IA, pode manipular opiniões, interferir em processos democráticos e prejudicar a reputação de indivíduos. Entender como as notícias falsas se espalham é o primeiro passo para nos protegermos.</p>
+            
+            <div class="subsecao">
+                <h3>Impacto nas Eleições e Desafios Jurídicos</h3>
+                <p><strong>Impacto nas Eleições:</strong> O uso de montagens para difamar candidatos ou manipular a opinião do eleitor é uma das maiores preocupações do Tribunal Superior Eleitoral (TSE), que exige rígidas regras de transparência e rotulagem para o uso de IA.</p>
+                <p><strong>Atraso Legal:</strong> A velocidade para a criação de material falso é infinitamente superior ao tempo que o sistema judiciário leva para provar a falsidade e responsabilizar os autores.</p>
+                <p><strong>Regulação de Plataformas:</strong> Órgãos de governo e especialistas cobram um "dever de cuidado" mais efetivo das empresas de tecnologia (Big Techs) na remoção rápida de conteúdos manipulados e na prestação de contas de seus algoritmos.</p>
+            </div>
+        </section>
+
+        <section id="combate" class="tab-content">
+            <h2>Como se Proteger e Agir</h2>
+            <p>Desenvolver o pensamento crítico, verificar as fontes antes de compartilhar e usar ferramentas de checagem de fatos são atitudes essenciais para exercer uma cidadania digital responsável na era da IA.</p>
+            
+            <div class="subsecao">
+                <h3>Cidadania Digital em Ação</h3>
+                <p><strong>Educação Midiática:</strong> O desenvolvimento do senso crítico é a principal defesa. A checagem de fatos, a confirmação de informações em veículos tradicionais e a análise do contexto da publicação são essenciais.</p>
+                <p><strong>Denúncia e Registro:</strong> Vítimas de falsidade ideológica ou difamação devem reunir provas rapidamente (como capturas de tela auditadas ou atas notariais) para exigir a remoção do material.</p>
+            </div>
+        </section>
+
+        <section id="noticias" class="tab-content">
+            <h2>Atualizações e Casos Recentes</h2>
+            <p>Fique por dentro das últimas discussões, atualizações de leis e relatórios sobre o impacto da Inteligência Artificial e da desinformação na sociedade.</p>
+            
+            <div class="subsecao">
+                <h3>Espaço para Feed de Notícias</h3>
+                <p><strong>[Título da Notícia Recente]:</strong> Breve resumo do acontecimento, novas regras ou atualizações tecnológicas no combate à desinformação.</p>
+                <p><strong>[Casos de Estudo]:</strong> Análise de eventos reais recentes em que ferramentas de detecção de IA ajudaram a desmascarar conteúdos fraudulentos.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
