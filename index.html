@@ -173,3 +173,179 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDDS - Cidadania Digital e IA</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">IDDS</div>
+        <p class="subtitle">Instituto de Cidadania Digital e Segurança</p>
+    </header>
+
+    <nav class="nav-tabs">
+        <button class="tab-link active" onclick="openTab(event, 'inicio')">Início</button>
+        <button class="tab-link" onclick="openTab(event, 'deepfakes')">Deepfakes</button>
+        <button class="tab-link" onclick="openTab(event, 'desinformacao')">Desinformação</button>
+        <button class="tab-link" onclick="openTab(event, 'combate')">Como Combater</button>
+        <button class="tab-link" onclick="openTab(event, 'noticias')">Notícias</button>
+        <button class="tab-link" onclick="openTab(event, 'jogo')">Jogo Interativo</button>
+    </nav>
+
+    <main class="container">
+        
+        <section id="inicio" class="tab-content active">
+            <h2>Cidadania Digital e Inteligência Artificial</h2>
+            <p>Seja bem-vindo ao IDDS. Navegue pelas abas para entender como o avanço da Inteligência Artificial, o surgimento das <strong>deepfakes</strong> e a disseminação de <strong>desinformação</strong> estão impactando a nossa sociedade e moldando o futuro da cidadania digital.</p>
+        </section>
+
+        <section id="deepfakes" class="tab-content">
+            <h2>O Impacto das Deepfakes</h2>
+            <p>Deepfakes são vídeos, áudios ou imagens gerados por IA que imitam de forma realista o rosto e a voz de pessoas reais. Embora a tecnologia possua fins artísticos, ela traz riscos sérios quando usada para criar declarações falsas sem consentimento.</p>
+            
+            <div class="subsecao">
+                <h3>Riscos Sociais e Eleitorais</h3>
+                <p><strong>Fabricação da Realidade:</strong> Com a popularização de geradores de mídia, a desinformação passou a contar com a criação sintética de acontecimentos falsos que simulam com precisão falas de autoridades ou figuras públicas.</p>
+                <p><strong>Danos Reputacionais:</strong> A manipulação de áudio e vídeo pode ser usada para atribuir falsas condutas ou posicionamentos a qualquer cidadão, gerando calúnias difíceis de serem desmentidas rapidamente.</p>
+            </div>
+        </section>
+
+        <section id="desinformacao" class="tab-content">
+            <h2>A Epidemia da Desinformação</h2>
+            <p>A desinformação em massa, impulsionada por algoritmos de IA, pode manipular opiniões, interferir em processos democráticos e prejudicar o debate saudável na internet.</p>
+            
+            <div class="subsecao">
+                <h3>Desafios Jurídicos e de Governança</h3>
+                <p><strong>Impacto nas Eleições:</strong> O uso de montagens manipuladas para confundir o eleitor é uma das maiores preocupações de órgãos públicos, como o Tribunal Superior Eleitoral (TSE), que exige regras claras de transparência no uso de IA.</p>
+                <p><strong>Atraso Legal:</strong> A velocidade de criação de materiais manipulados é superior ao tempo de resposta do sistema judiciário para identificar os autores e aplicar as devidas punições.</p>
+                <p><strong>Regulação de Plataformas:</strong> Especialistas cobram o "dever de cuidado" das Big Techs na remoção ágil de conteúdos nocivos e no aprimoramento de seus algoritmos.</p>
+            </div>
+        </section>
+
+        <section id="combate" class="tab-content">
+            <h2>Como se Proteger e Agir</h2>
+            
+            <div class="subsecao">
+                <h3>Educação Midiática e Cidadania</h3>
+                <p><strong>Pensamento Crítico:</strong> Desenvolver o hábito de verificar as fontes e desconfiar de conteúdos alarmantes é a principal barreira contra notícias falsas.</p>
+                <p><strong>Denúncia e Registro:</strong> Vítimas de falsidade ideológica ou difamação digital devem reunir evidências (como links e capturas de tela) para reportar o abuso diretamente nas plataformas e buscar auxílio legal.</p>
+            </div>
+        </section>
+
+        <section id="noticias" class="tab-content">
+            <h2>Painel de Notícias e Atualizações</h2>
+            <p>Fique por dentro das últimas discussões e diretrizes globais sobre o uso ético da Inteligência Artificial.</p>
+            
+            <div class="subsecao">
+                <h3>Últimas Diretrizes</h3>
+                <p><strong>Atualização Regulatória:</strong> Tribunais eleitorais reforçam regras para a rotulagem obrigatória de conteúdos políticos criados ou modificados via IA.</p>
+                <p><strong>Segurança na Rede:</strong> Alianças globais buscam desenvolver novas ferramentas de marca d'água digital para facilitar a identificação de materiais sintéticos.</p>
+            </div>
+        </section>
+
+        <section id="jogo" class="tab-content">
+            <h2>Simulador: Sentinela Digital IDDS</h2>
+            <p>Analise os relatórios de mídia enviados pelas redes sociais e decida a melhor ação para manter o ambiente digital seguro.</p>
+            
+            <div id="game-container" class="game-box">
+                <div class="status-bar">
+                    <span>Pontuação de Cidadania: <strong id="score">0</strong></span>
+                </div>
+                <hr style="border-color: #333; margin: 15px 0;">
+                <div id="scenario-text" class="scenario">Carregando caso...</div>
+                <div id="options-container" class="options-vertical"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Função para alternar as abas do site
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Cenários Educativos do Simulador
+        const scenarios = [
+            {
+                text: "CASO 1: Um vídeo de um prefeito anunciando o cancelamento do transporte público na cidade viraliza em grupos locais. Em câmera lenta, você nota desencaixes na sincronia da fala e falhas de pixels na linha do pescoço. O que você faz?",
+                options: [
+                    { text: "Classificar como mídia manipulada por IA e emitir um relatório de desinformação.", correct: true, feedback: "Correto! Os erros de renderização e dessincronização indicam o uso de deepfake. O alerta precoce protegeu o debate local." },
+                    { text: "Compartilhar imediatamente nos canais oficiais para aumentar as visualizações do perfil.", correct: false, feedback: "Incorreto. Disseminar conteúdo sem verificação técnica propaga desinformação e alarma o público sem necessidade." }
+                ]
+            },
+            {
+                text: "CASO 2: Um arquivo de áudio atribuído a um investidor conhecido promete recompensas em dinheiro por meio de cadastros em um link duvidoso. Portais oficiais de notícias não trazem nenhuma informação correlata. Como agir?",
+                options: [
+                    { text: "Manter o áudio circulando, assumindo que a voz é muito semelhante à da figura pública.", correct: false, feedback: "Incorreto. Tecnologias de clonagem de áudio sintético são rotineiramente empregadas em fraudes de engenharia social." },
+                    { text: "Restringir preventivamente a postagem e orientar os usuários a conferirem fontes oficiais.", correct: true, feedback: "Muito bem! O cuidado evitou que internautas fornecessem dados sensíveis a links falsos." }
+                ]
+            },
+            {
+                text: "CASO 3: Um portal especializado de imprensa publica um artigo científico apontando falhas e vulnerabilidades éticas nos algoritmos de uma rede social de grande porte. Como moderar?",
+                options: [
+                    { text: "Permitir a circulação e apoiar o direito à informação verídica.", correct: true, feedback: "Excelente. O jornalismo de base técnica e fontes declaradas é essencial para fiscalizar o avanço das tecnologias de IA." },
+                    { text: "Remover o artigo do ar para evitar críticas institucionais contra os sistemas automatizados.", correct: false, feedback: "Incorreto. Silenciar informações auditadas e profissionais compromete o desenvolvimento da cidadania e a transparência digital." }
+                ]
+            }
+        ];
+
+        let currentScenario = 0;
+        let score = 0;
+
+        function loadScenario() {
+            if (currentScenario < scenarios.length) {
+                const sc = scenarios[currentScenario];
+                document.getElementById("scenario-text").innerText = sc.text;
+                const optionsDiv = document.getElementById("options-container");
+                optionsDiv.innerHTML = "";
+
+                sc.options.forEach(opt => {
+                    const btn = document.createElement("button");
+                    btn.innerText = opt.text;
+                    btn.className = "game-btn";
+                    btn.onclick = () => selectOption(opt);
+                    optionsDiv.appendChild(btn);
+                });
+            } else {
+                document.getElementById("scenario-text").innerHTML = `<h3>Simulação Encerrada</h3><p>Você concluiu o treinamento do IDDS com ${score} de ${scenarios.length} acertos em decisões éticas.</p>`;
+                document.getElementById("options-container").innerHTML = `<button class="game-btn" onclick="restartGame()">Jogar Novamente</button>`;
+            }
+        }
+
+        function selectOption(option) {
+            alert(option.feedback);
+            if (option.correct) {
+                score++;
+                document.getElementById("score").innerText = score;
+            }
+            currentScenario++;
+            loadScenario();
+        }
+
+        function restartGame() {
+            currentScenario = 0;
+            score = 0;
+            document.getElementById("score").innerText = score;
+            loadScenario();
+        }
+
+        window.onload = loadScenario;
+    </script>
+</body>
+</html>
